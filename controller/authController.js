@@ -53,7 +53,7 @@ exports.signin = async (req, res) => {
       console.log("Received data:", req.body);
   
       console.log("Email received:", email);
-    const user = await User.findOne({ email: email.toLowerCase() });
+    const user = await User.findOne({ email: email });
     console.log("User found:", user);
       if (!user) {
         return res.status(404).json({ success: false, message: 'User not found' });
